@@ -107,7 +107,7 @@ int main() {
     printf("PIB per Capita: %.2f\n", pibcap1);
 
     //Cálculo do Super Poder da Carta 1
-    SuperPoder1 = populacao1 + area1 + pib1 + pontosturisticos1 + (1.0f / dpop1) +pibcap1;
+    SuperPoder1 = populacao1 + area1 + pib1 + pontosturisticos1 + (1.0f / dpop1) + pibcap1;
     printf("Super Poder: %.2f\n", SuperPoder1);
     
     
@@ -133,7 +133,7 @@ int main() {
     printf("PIB per Capita: %.2f\n", pibcap2);
 
     //Cálculo do Super Poder da Carta 2
-    SuperPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + (1.0f / dpop1) + pibcap2;
+    SuperPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + (1.0f / dpop2) + pibcap2;
     printf("Super Poder: %.2f\n", SuperPoder2);
     printf(" \n");
     //
