@@ -22,7 +22,7 @@ int main() {
         char estado1[2], estado2[2];
         char codigocarta1[4], codigocarta2[4];
         char nomecidade1[20], nomecidade2[20];
-        int populacao1, populacao2;
+        unsigned long int populacao1, populacao2;
         float area1, area2;
         float pib1, pib2;
         int pontosturisticos1, pontosturisticos2;
@@ -48,11 +48,11 @@ int main() {
     printf("Estado (A a H): ");
     scanf(" %c", estado1);
     printf("Código da Carta (ex: A01, B03): ");
-    scanf("%s", &codigocarta1);
+    scanf("%s", codigocarta1);
     printf("Nome da Cidade: ");
     scanf("%s", nomecidade1);
     printf("População: ");
-    scanf("%d", &populacao1);
+    scanf("%lu", &populacao1);
     printf("Área Total em km²: ");
     scanf("%f", &area1);
     printf("PIB (em bilhões de Reais): ");
@@ -71,11 +71,11 @@ int main() {
     printf("Estado (A a H): ");
     scanf(" %c", estado2);
     printf("Código da Carta (ex: A01, B03): ");
-    scanf("%s", &codigocarta2);
+    scanf("%s", codigocarta2);
     printf("Nome da Cidade: ");
     scanf("%s", nomecidade2);
     printf("População: ");
-    scanf("%d", &populacao2);
+    scanf("%lu", &populacao2);
     printf("Área Total em km²: ");
     scanf("%f", &area2);
     printf("PIB (em bilhões de Reais): ");
@@ -95,7 +95,7 @@ int main() {
     printf("Estado: %c\n",estado1);
     printf("Código da Carta: %s\n", codigocarta1);
     printf("Nome da Cidade: %s\n", nomecidade1);
-    printf("População: %ld pessoas\n", populacao1);
+    printf("População: %lu pessoas\n", populacao1);
     printf("Área Total: %.2f Km²\n", area1);
     printf("PIB: R$ %.2f bilhões\n", pib1);
     printf("Números de Pontos Turísticos: %d\n", pontosturisticos1);
@@ -107,7 +107,7 @@ int main() {
     printf("PIB per Capita: %.2f\n", pibcap1);
 
     //Cálculo do Super Poder da Carta 1
-    SuperPoder1 = populacao1 + area1 + pib1 + pontosturisticos1 + dpop1 +pibcap1;
+    SuperPoder1 = populacao1 + area1 + pib1 + pontosturisticos1 + (1.0f / dpop1) +pibcap1;
     printf("Super Poder: %.2f\n", SuperPoder1);
     
     
@@ -121,7 +121,7 @@ int main() {
     printf("Estado: %c\n",estado2);
     printf("Código da Carta: %s\n", codigocarta2);
     printf("Nome da Cidade: %s\n", nomecidade2);
-    printf("População: %ld\n", populacao2);
+    printf("População: %lu\n", populacao2);
     printf("Área Total: %.2f Km²\n", area2);
     printf("PIB: R$ %.2f bilhões\n", pib2);
     printf("Números de Pontos Turísticos: %d\n", pontosturisticos2);
@@ -133,7 +133,7 @@ int main() {
     printf("PIB per Capita: %.2f\n", pibcap2);
 
     //Cálculo do Super Poder da Carta 2
-    SuperPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + dpop2 + pibcap2;
+    SuperPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + (1.0f / dpop1) + pibcap2;
     printf("Super Poder: %.2f\n", SuperPoder2);
     printf(" \n");
     //
