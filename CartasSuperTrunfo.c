@@ -1,11 +1,13 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
+// Desafio Super Trunfo - Países - Tema 3 - Novato
 
 int main() {
 
-    /*  //Para teste de funcionalidade do programa
-        char estado1[2]= "A", estado2[2] = "B";
+      
+     /* 
+        //Para teste de funcionalidade do programa
+        char estado1[3]= "RJ", estado2[3] = "RJ";
         char codigocarta1[4] = "A01", codigocarta2[4] = "B01";
         char nomecidade1[20] = "ANGRA", nomecidade2[20] = "PARATY";
         unsigned long int populacao1 = 170000, populacao2 = 150000;
@@ -19,7 +21,7 @@ int main() {
         float resultadoPopulacao, resultadoArea, resultadoPIB, resultadoTuristicos, resultadoDensidade, resultadoPIBperCapita, resultadoSuperPoder;
     */
 
-        char estado1[2], estado2[2];
+        char estado1[3], estado2[3];
         char codigocarta1[4], codigocarta2[4];
         char nomecidade1[20], nomecidade2[20];
         unsigned long int populacao1, populacao2;
@@ -31,10 +33,10 @@ int main() {
         float SuperPoder1;
         float SuperPoder2;
         float resultadoPopulacao, resultadoArea, resultadoPIB, resultadoTuristicos, resultadoDensidade, resultadoPIBperCapita, resultadoSuperPoder;
-
+    
     //Título do Programa
     printf(" ------------------------------------------------\n");
-    printf("| ** Bem vindo ao Desafio Super Trunfo - v3.0 ** |\n");
+    printf("| ** Bem vindo ao Desafio Super Trunfo - v4.0 ** |\n");
     printf(" ------------------------------------------------\n");
     printf(" \n");
 
@@ -45,7 +47,7 @@ int main() {
     printf(" \n");
 
     //Coleta das informações da Carta 01
-    printf("Estado (A a H): ");
+    printf("Estado (ex: RJ, SP): ");
     scanf(" %c", estado1);
     printf("Código da Carta (ex: A01, B03): ");
     scanf("%s", codigocarta1);
@@ -136,31 +138,18 @@ int main() {
     SuperPoder2 = populacao2 + area2 + pib2 + pontosturisticos2 + (1.0f / dpop2) + pibcap2;
     printf("Super Poder: %.2f\n", SuperPoder2);
     printf(" \n");
-    //
-    //Caparação das Cartas
-    //
-    resultadoPopulacao = populacao1 > populacao2;
-    resultadoArea = area1 > area2;
-    resultadoPIB = pib1 > pib2;
-    resultadoTuristicos = pontosturisticos1 > pontosturisticos2;
-    resultadoDensidade = dpop1 < dpop2;
-    resultadoPIBperCapita = pibcap1 > pibcap2;
-    resultadoSuperPoder = SuperPoder1 > SuperPoder2;
+    
+    // Exibição dos resultados das comparações    
+    printf("Comparação das Cartas (Atributo: Super Poder):\n");
+    printf("Carta 01 - %s (%s): Super Poder: %.2f\n", nomecidade1, estado1, SuperPoder1);
+    printf("Carta 02 - %s (%s): Super Poder: %.2f\n", nomecidade2, estado2, SuperPoder2);
 
-    //
-    //Exibe o resultado da comparação
-    // 
-    printf("*** Comparação de Cartas ***\n");
-    printf("Numeral 1 - Carta 1 Vence\n");
-    printf("Numeral 0 - Carta 2 Vence\n");
-    printf(" \n");
-    printf("População: %d\n", (int)resultadoPopulacao);
-    printf("Área: %d\n", (int) resultadoArea);
-    printf("PIB: %d\n", (int) resultadoPIB);
-    printf("Pontos Turísticos: %d\n", (int) resultadoTuristicos);
-    printf("Densidade Populacional: %d\n", (int) resultadoDensidade);
-    printf("PIB per Capita: %d\n", (int) resultadoPIBperCapita);
-    printf("Super Poder: %d\n", (int) resultadoSuperPoder);
+    // Compara as cartas
+    if (SuperPoder1 > SuperPoder2) {
+        printf("Carta 01 - %s (%s) venceu com Super Poder: %.2f\n", nomecidade1, estado1, SuperPoder1);
+    } else {
+        printf("Carta 02 - %s (%s) venceu com Super Poder: %.2f\n", nomecidade2, estado2, SuperPoder2);
+    }
 
     //
     //Encerramento do Programa
